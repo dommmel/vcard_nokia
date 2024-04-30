@@ -8,47 +8,48 @@
 </head>
 <body>
     <div class="container">
-        <h1>Format vCards for Nokia 2660 (30+ series)</h1>
+        <h1>Formatting vCards for the Nokia 2660 (30+ Series)</h1>
         <h2>Why?</h2>
         <div>
-            Nokia 2660 (30+ series) vCard import just sucks so bad. 
+            The vCard import functionality on the Nokia 2660 (30+ series) is terrible.:
             <ul>
-                <li>It only accepts a single (last) name per contact</li>  
+                <li>It only accepts a single name (last name) field per contact.</li>
                 <li>
-                    It cannot deal with more than two phone numbers per contact (and then, one has to be <em>cell</em> and one <em>home</em>)
+                    It supports no more than two phone numbers per contact; these must be categorized specifically as <em>cell</em> and <em>home</em>.
                 </li>
                 <li>
-                    It will fail to import on many occasions.
+                    It frequently fails to import vCards correctly.
                 </li>
             </ul>
         </div>
         <h2>What?</h2>
         <ul>
             <li>
-                Break contacts into multiple vCards, e.g " John Doe" and "John Doe (1)"
+                Break contacts with many phone numbers into multiple vCards, e.g., "John Doe" and "John Doe (1)."
             </li>
             <li>
-                When possible use custom labels as name suffixes, e.g "John Doe (old cell)"
+                Utilize custom labels as name suffixes where feasible, e.g., "John Doe (old cell)."
             </li>
             <li>
-                Use DOS line breaks (CRLF) instead of Unix (LF)
+                Employ DOS-style line breaks (CRLF) instead of Unix-style (LF).
             </li>
             <li>
-                Have a look at the <a href="https://github.com/dommmel/vcard_nokia">source code</a> for more details
+                Explore the <a href="https://github.com/dommmel/vcard_nokia">source code on GitHub</a> for additional details.
             </li>
         </ul>
         <h2>How?</h2>
         <ol>
             <li>
-                Export vcf file from icloud, apple or google contacts
+                Export a VCF file from iCloud, Apple, or Google contacts.
             </li>
             <li>
-                Upload here and download the re-formatted vcf file
+                Upload it here and download the reformatted VCF file.
             </li>
             <li>
-                Tranfer the file to your Nokia 2660 (e.g. via bluetooth or usb cable)
+                Transfer the file to your Nokia 2660 via Bluetooth or USB cable.
             </li>
         </ol>
+
         <h2>Let's do this!</h2>
         <div class="widget">
             <input type="file" id="fileInput" accept=".vcf">
