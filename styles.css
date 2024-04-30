@@ -1,23 +1,96 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Base settings to normalize styling across browsers */
+html, body {
   margin: 0;
-}
-
-input, button {
-  margin: 10px;
-  padding: 10px;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  background: #f4f4f4;
+  line-height: 1.6;
   font-size: 16px;
 }
 
-.widget {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
+/* Container for padding and max-width */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style headings */
+h1, h2 {
+  color: #0056b3; /* A nice, dark blue for headings */
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
 }
 
 h2 {
-  margin-top: 2em;
+  font-size: 1.8em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  border: 1px dashed #0056b3;
+  background: #e9ecef;
+  display: block;
+  padding: 20px;
+  width: calc(100% - 42px); /* Adjust width to account for padding and border */
+  margin: 10px auto;
+  text-align: center;
+  cursor: pointer;
+  color: #0056b3;
+  transition: background-color 0.3s ease;
+}
+
+input[type="file"]:hover, input[type="file"]:focus {
+  background-color: #d0e2f7;
+  outline: none; /* Removes the default focus outline */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+/* Further enhancement for mobile */
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 1.2em;
+  }
 }
