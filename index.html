@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Format icloud/google vCards for Nokia 2660 (30+ series)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Format vCards for Nokia 2660 (30+ series)</h1>
+        <h2>Why?</h2>
+        <div>
+            Nokia 2660 (30+ series) vCard import just sucks so bad. 
+            <ul>
+                <li>It only accepts a single (last) name per contact</li>  
+                <li>
+                    It cannot deal with more than two phone numbers per contact (and then, one has to be <em>cell</em> and one <em>home</em>)
+                </li>
+                <li>
+                    It will fail to import on many occasions.
+                </li>
+            </ul>
+        </div>
+        <h2>What?</h2>
+        <ul>
+            <li>
+                Break contacts into multiple vCards, e.g " John Doe" and "John Doe (1)"
+            </li>
+            <li>
+                When possible use custom labels as name suffixes, e.g "John Doe (old cell)"
+            </li>
+            <li>
+                Use DOS line breaks (CRLF) instead of Unix (LF)
+            </li>
+            <li>
+                Have a look at the <a href="https://github.com/dommmel/vcard_nokia">source code</a> for more details
+            </li>
+        </ul>
+        <h2>How?</h2>
+        <ol>
+            <li>
+                Export vcf file from icloud, apple or google contacts
+            </li>
+            <li>
+                Upload here and download the re-formatted vcf file
+            </li>
+            <li>
+                Tranfer the file to your Nokia 2660 (e.g. via bluetooth or usb cable)
+            </li>
+        </ol>
+        <h2>Let's do this!</h2>
+        <div class="widget">
+            <input type="file" id="fileInput" accept=".vcf">
+            <p id="status"></p>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
