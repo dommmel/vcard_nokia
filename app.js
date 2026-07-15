@@ -20,6 +20,9 @@ function processFile() {
           const newVCardString = nokiaJson.map(ToVcards).join('');
           downloadVCard(newVCardString);
         } catch (error) {
+          // One bad contact fails the whole file, so log why - the message alone
+          // gives no clue which contact caused it.
+          console.error(error);
           msg = "There was an error processing the file.";
         }
         document.getElementById('status').textContent = msg;

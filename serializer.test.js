@@ -79,3 +79,27 @@ test('Contact with multiple numbers becomes many vcards whre names have numbers 
   expect(vcards).toContain("Mama Mugglewood (ch mobile)")
 
 })
+
+test('Contact without a name uses its number as the name instead of throwing', () => {
+  const nokiaResult = Nokia(Cards[5])
+  const vcards = ToVcards(nokiaResult)
+
+  expect(nokiaResult.name).toBe("01701234567")
+  expectNumberOfVcardsToBe(vcards, 1)
+  expect(vcards).toContain("FN;CHARSET=UTF-8:01701234567")
+})
+
+test('Contact without a name but with a labeled number keeps the label as suffix', () => {
+  const nokiaResult = Nokia(Cards[6])
+  const vcards = ToVcards(nokiaResult)
+
+  expect(nokiaResult.name).toBe("+41441234567")
+  expect(vcards).toContain("FN;CHARSET=UTF-8:+41441234567 (office)")
+})
+
+test('Contact with neither a name nor a number produces no vcards', () => {
+  const nokiaResult = Nokia(Cards[7])
+
+  expect(nokiaResult.tel.length).toBe(0)
+  expect(ToVcards(nokiaResult)).toBe("")
+})

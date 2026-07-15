@@ -58,6 +58,19 @@ item1.X-ABLabel:ch mobile
 item2.TEL:+41 7657657657
 TEL;type=HOME,VOICE:+49 176 123
 END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+TEL;type=CELL:0170 1234567
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+item1.TEL:+41 44 1234567
+item1.X-ABLabel:office
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+EMAIL;type=INTERNET:nobody@Mugglewood.ch
+END:VCARD
 `
 
 export const Cards = Parse(vcardsInput)

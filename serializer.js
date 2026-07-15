@@ -14,14 +14,32 @@ function phoneNumbers(parsedVcard) {
 }
 
 /**
- * 
- * @param {Object} parsedVcard 
+ *
+ * @param {Object} parsedVcard
+ * @param {Array} tel the contact's phone numbers
+ * @returns the name to write out to the vcard
+ *
+ * Not every contact has an FN. Numbers saved straight from a call log often have no
+ * name at all, so fall back to the number itself to keep the contact importable.
+ */
+function name(parsedVcard, tel) {
+  const fn = parsedVcard.default && parsedVcard.default.fn
+  if (fn && fn[0].value) {
+    return fn[0].value
+  }
+  return tel.length > 0 ? cleanupTel(tel[0].value) : ''
+}
+
+/**
+ *
+ * @param {Object} parsedVcard
  * @returns a json object ready to be written out to a NOKIA specific vcard object
  */
 export function Nokia(parsedVcard) {
+  const tel = phoneNumbers(parsedVcard)
   return {
-    name: parsedVcard.default.fn[0].value,
-    tel:phoneNumbers(parsedVcard)
+    name: name(parsedVcard, tel),
+    tel
   }
 }
 
